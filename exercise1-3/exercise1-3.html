@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W2P1 - Exercise 1.3</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.3</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Add the <code>setup()</code> and <code>draw()</code> functions to <strong>exercise1-3/sketch.js</strong> and create a canvas that is at least 500 x 500 pixels. 
+            Set the background and fill to any colour you like.</p>
+            <p>In lecture, we saw how to move a single shape with the mouse by using <code>mouseX</code> and <code>mouseY</code> to set the shape's x and y coordinates. Your animations 
+            will often consist of more than one shape that need to be moved as one entity. Therefore, it is important to get comfortable with calculating the coordinates of shapes relative to 
+            some other point, such as the mouse location.</p>
+            <p>Add a 100px wide square to your canvas and set it to move with the mouse. The square should be centred under the mouse--the mouse pointer should be over the centre of the square.</p>
+            <p>Next, add another 100px wide square and position it so that its bottom right corner touches the top left corner of the original square. Make sure that the new square maintains its position relative 
+                to the orginal square when the mouse is moved.
+            </p>
+            <p>Finally, add a third 100px wide square and position it so that its top left corner touches the bottom right corner of the original square. Again, make 
+                sure that the new square maintains its position relative to the other squares when the mouse is moved.
+            </p>
+            <p>You should have a diagonal line of squares that move in unison when the mouse is moved. Check the expected output below.</p>
+            <p>When you are done, check your work using <a href="./check-exercise1-3.html">check-exercise1-3.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="500" height="500" controls>
+                    <source src="./assets/exercise1-3.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You only need to edit sketch.js.</p>
+                    <p>The maths is a lot easier if you draw the squares in CENTER mode.</p>
+                    <p>All x and y coordinates should be calculated relative to <code>mouseX</code> or <code>mouseY</code>.</p>
+                    <p>The calculations should be quite simple. Sometimes you will need to add to the value of <code>mouseX</code> or <code>mouseY</code>, sometimes you will need to subtract.</p>
+                    <p>Some useful links in the p5.js documentation:</p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/#/p5/square" target="_blank"><code>square()</code></a></li>
+                        <li><a href="https://p5js.org/reference/#/p5/mouseX" target="_blank"><code>mouseX</code></a></li>
+                        <li><a href="https://p5js.org/reference/#/p5/mouseY" target="_blank"><code>mouseY</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

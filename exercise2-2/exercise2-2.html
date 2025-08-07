@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W2P1 - Exericse 2.2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 2.2</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>In exercise 5 of the last practical, you were asked to create a character using 2D shapes. In this exercise, you're going to 
+                use variables to animate your character to move with the mouse. Copy the contents of last practical's <strong>exercise5/sketch.js</strong> into 
+                this folder's <strong>sketch.js</strong>. If you put last week's practical in your filestore, you should be able to access it on the 
+                any lab computer. If not, you can find all module repositories you have access to here: <a href="https://github.com/UoY-IM-PDM" target="_blank">https://github.com/UoY-IM-PDM</a>. 
+                As you only need the contents of one file, you do not need to clone the whole of last week's practical again. Navigate to the file you 
+                need in your browser and copy its contents.
+            </p>
+            <p>In your original code, the x and y locations of all the shapes that make up your creature were hardcoded. Modify your sketch so that your creature moves with the mouse. </p>
+            <h3>Suggested steps</h3>
+            <p>
+                Pick a component of your character to be its centre point--the point that will eventually be under the mouse. In <code>draw()</code>, create 
+                two new <em>local</em> variables called centreX and centreY and initialise them with the centre point of your character. For example, I 
+                picked my character's torso to be the centre point. The coordinates of his torso were 400, 350, so my code for centreX and centreY is:<br>
+                <code>let centreX = 400;</code><br>
+                <code>let centreY = 350;</code>
+            </p>
+            <p>Replace the hardcoded x and y coordinates of your character's centre shape with your new variables.</p>
+            <p>Next, go through each shape that makes up your character and convert its x and y coordinates from hardcoded numbers 
+                to calculations relative to the centreX and centreY variables. For example, my character's head was drawn as follows:<br>
+                <code>rect(400, 235, 60, 70);</code> <br>
+                ...which can be converted to:<br>
+                <code>rect(centreX, centreY - 115, 60, 70);</code>
+            </p>
+            <p>When you are done with the above steps, your character should appear exactly the same as the original character.</p>
+            <p>Now you're ready to make it move with the mouse. Change the intitialisations of centreX and centreY to initialise 
+                the variables with <code>mouseX</code> and <code>mouseY</code>:<br>
+                <code>let centreX = mouseX;</code><br>
+                <code>let centreY = mouseY;</code>
+            </p>
+            <p><em>Note: using the local variables centreX and centreY makes the conversion from hardcoded coordinates to relative 
+                coordinates easier. Now that the process is complete, the variables are redundant. If you feel so inclined, you could 
+                get rid of centreX and centreY altogether, and just use mouseX and mouseY in their place when the shapes 
+                are called. 
+            </em></p>
+            <p>Example output:</p>
+            <p>
+                <video width="600" height="600" controls>
+                    <source src="./assets/exercise2-2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

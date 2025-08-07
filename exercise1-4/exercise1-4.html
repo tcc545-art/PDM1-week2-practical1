@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W2P1 - Exercise 1.4</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.4</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Add the <code>setup()</code> and <code>draw()</code> functions to <strong>exercise1-4/sketch.js</strong> and create a 600 x 600px canvas. 
+            Set the background to any colour you like.</p>
+            <p>Add a rectangle (not a square) to the canvas so that it is in the centre of the canvas. Choose an arbitrary width and height for now.
+            </p>
+            <p>The goal of this exercise is make the rectangle grow and shrink as the mouse moves as in exercise 1.1 but, instead of growing from the canvas origin, the rectangle will change size based on the mouse's distance from the centre of the canvas. Watch the expected output video below to get a better sense of what you're being asked to do. As you watch, notice that the mouse pointer is always by a corner of the rectangle, but it often changes corner.</p>
+            <p>You will need to use the system variables <code>mouseX</code>, <code>mouseY</code>, <code>width</code>, and <code>height</code>.</p>
+            <p>When you are done, check your work using <a href="./check-exercise1-4.html">check-exercise1-4.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="600" controls>
+                    <source src="./assets/exercise1-4.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You only need to edit sketch.js.</p>
+                    <p>This exercise requires a little maths. The maths itself is remarkably simple but can be conceptually tricky. Here are some hints:
+                    </p>
+                    <ol>
+                        <li>As the rectangle needs to be centred and its dimensions will grow from the centre, it's a good idea to set the rectangle to draw in CENTER mode. 
+                            This way, the x and y coordinates of the rectangle will always be the same, no matter where the mouse is.
+                        </li>
+                        <li>Focus on calculating just the width of the rectangle. There's no need to tackle both width and height at once. You'll find the maths to be quite similar for both dimensions.</li>
+                        <li>Next, break the problem of calculating the width down into smaller steps. Here is the task: the rectangle should get wider as the mouse moves further from the centre--when the mouse is at the centre, the width should be 0. When the mouse is as far from the centre as it can be, when <code>mouseX</code> is 0 OR 600, the rectangle should be as wide as it can be, which is the width of the screen. You can break the task down as follows:
+                            <ul>
+                                <li>Calculate <code>mouseX</code>'s distance from the centre. Your calculation should return the same distance when <code>mouseX</code> is 0 and when <code>mouseX</code> is 600.</li>
+                                <li>Figure out how to calculate the rectangle's width from the distance you calculated. This part should be a simple multiplication.</li>
+                            </ul>
+                        </li>
+                        <li>Now you're ready to tackle calculating the height of the rectangle. It should be same process just with different system variables.</li>
+                    </ol>
+                    <p>Some useful links in the p5.js documentation:</p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/#/p5/rect" target="_blank"><code>rect()</code></a></li>
+                        <li><a href="https://p5js.org/reference/#/p5/rectMode" target="_blank"><code>rectMode()</code></a></li>
+                        <li><a href="https://p5js.org/reference/#/p5/mouseX" target="_blank"><code>mouseX</code></a></li>
+                        <li><a href="https://p5js.org/reference/#/p5/mouseY" target="_blank"><code>mouseY</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
