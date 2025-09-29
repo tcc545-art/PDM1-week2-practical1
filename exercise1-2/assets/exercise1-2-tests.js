@@ -22,7 +22,7 @@ function matchRectangles(actualShapes) {
         TestResults.addPass(`When the canvas is ${width} x ${height}, the rectangles have the expected proportions.`);
     } else {
         if (actualShapes.length > 5) {
-            TestResults.addFail(`When the canvas is ${width} x ${height}, there should be five rectangles. Found ${actualShapes.length} shapes.`);
+            TestResults.addFail(`When the canvas is ${width} x ${height}, there should be five rectangles. Found ${actualShapes.length} shapes. This sometimes happens when you forget to call <code>background()</code> and p5.js keeps drawing shapes on top of the existing shapes.`);
         } else {
             let message = `When the canvas is ${width} x ${height}, the following rectangles were not found:<ul>`;
             if (!testHasShape(rect1, true)) {
